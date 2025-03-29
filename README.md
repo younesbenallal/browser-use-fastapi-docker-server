@@ -30,3 +30,4 @@ curl -X POST -H "Content-Type: application/json; charset=utf-8" -d '{"task": "go
 ```
 curl -X POST -H "Content-Type: application/json; charset=utf-8" -d '{"task": "go to google  and get me title and responsibilities  of two software engineering jobs in phoenix along with their links"}' http://localhost:5055/v1/query
 ```
+4. [Optional] To terminate, in-flight request make a GET call to `http://localhost:5055/v1/terminate`. This needs to improve to handle specific request being terminated with request id.
