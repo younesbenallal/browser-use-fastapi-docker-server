@@ -25,7 +25,7 @@ COPY . /app
 WORKDIR /app
 
 # Expose the port your application runs on (if applicable)
-EXPOSE 5000
+EXPOSE 5055
 
 # Set the default command to run your application
 CMD ["python", "server.py"]
