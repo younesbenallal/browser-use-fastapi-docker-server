@@ -3,7 +3,7 @@ load_dotenv(override=True)
 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from langchain_openai import ChatOpenAI
+from langchain_openai import AzureChatOpenAI
 from browser_use import Agent, Browser, BrowserConfig
 
 app = FastAPI()
@@ -25,7 +25,7 @@ async def query(request: QueryRequest):
     
     current_agent = Agent(
         task=request.task,
-        llm=ChatOpenAI(base_url="https://models.inference.ai.azure.com", model="gpt-4o-mini"),
+        llm=AzureChatOpenAI(model="gpt-4o-mini"),
         browser=browser,
     )
     result = await current_agent.run()
